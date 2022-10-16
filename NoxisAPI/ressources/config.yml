@@ -1,0 +1,40 @@
+messages:
+  join_title: "&bBienvenue sur NoxisMC !"
+  give_player_ping: "&bVous avez &e<ping> &bde ping."
+  commands:
+    console_try_player_command: "Vous ne pouvez pas utiliser cette commande via la console."
+    no_permission: "&cVous n'avez pas la permission d'effectuer cette commande."
+    invalid_arguments_number: "&cInvalid arguments number.<retour>
+                               &r&8&m&l----------------<retour>
+                               &bSi vous voulez utiliser cette commande pour vous voici ses arguments :<retour>
+                               &bUtilisation : &e/coins add amount<retour>
+                               &bUtilisation : &e/coins remove amount<retour>
+                               &bUtilisation : &e/coins set amount<retour>
+                               &bUtilisation : &e/coins look<retour>
+                               &r&8&m&l----------------<retour>
+                               &bSi vous voulez utiliser cette commande pour un autre joueur voici ses arguments :<retour>
+                               &bUtilisation : &e/coins add Pseudo amount<retour>
+                               &bUtilisation : &e/coins remove Pseudo amount<retour>
+                               &bUtilisation : &e/coins set Pseudo amount<retour>
+                               &bUtilisation : &e/coins look Pseudo<retour>
+                               &r&8&m&l----------------"
+    invalid_arguments: "&cInvalid arguments.<retour>
+                        &r&8&m&l----------------<retour>
+                        &bSi vous voulez utiliser cette commande pour vous voici ses arguments :<retour>
+                        &bUtilisation : &e/coins add amount<retour>
+                        &bUtilisation : &e/coins remove amount<retour>
+                        &bUtilisation : &e/coins set amount<retour>
+                        &bUtilisation : &e/coins look<retour>
+                        &r&8&m&l----------------<retour>
+                        &bSi vous voulez utiliser cette commande pour un autre joueur voici ses arguments :<retour>
+                        &bUtilisation : &e/coins add Pseudo amount<retour>
+                        &bUtilisation : &e/coins remove Pseudo amount<retour>
+                        &bUtilisation : &e/coins set Pseudo amount<retour>
+                        &bUtilisation : &e/coins look Pseudo<retour>
+                        &r&8&m&l----------------"
+    coins:
+      player_look_his_coins: "&bVous avez actuellement &e<arg0> &bcoins."
+      give_coins_to_player: "&bVous venez de donner &e<amount> &bcoins à &e<target_name>&b."
+      remove_coins_to_player: "&bVous venez de retirer &e<amount> &bcoins à &e<target_name>&b."
+      set_coins_to_player: "&bVous venez de mettre les coins de &e<target_name>&b à &e<amount>&b."
+      player_look_coins_of_other_player: "&bLe joueur &e<target_name> &bpossède &e<target_coins> &bcoins."
