@@ -26,7 +26,7 @@ public class PlayerData {
         preparedStatement.executeUpdate();
         preparedStatement.close();
 
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + amount + " coins have been added to " + Bukkit.getPlayer(uuid).getName() + ".");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + amount + " coins have been added to " + Bukkit.getPlayer(uuid).getName() + ".");
 
     }
 
@@ -39,7 +39,7 @@ public class PlayerData {
         preparedStatement.executeUpdate();
         preparedStatement.close();
 
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + amount + " coins have been withdrawn to " + Bukkit.getPlayer(uuid).getName() + ".");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + amount + " coins have been withdrawn to " + Bukkit.getPlayer(uuid).getName() + ".");
 
     }
 
@@ -52,7 +52,7 @@ public class PlayerData {
         preparedStatement.executeUpdate();
         preparedStatement.close();
 
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + Bukkit.getPlayer(uuid).getName() + "'s coins have been set to " + amount + ".");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + Bukkit.getPlayer(uuid).getName() + "'s coins have been set to " + amount + ".");
 
     }
 

@@ -93,14 +93,14 @@ public class NoxisAPI extends JavaPlugin {
 
     public static synchronized NoxisAPI getAPIInstance() { return APIInstance; }
 
-    public static synchronized DatabaseManager getDatabaseManager() { return databaseManager; }
+    public synchronized DatabaseManager getDatabaseManager() { return databaseManager; }
 
-    public static synchronized TitleManager getTitleManager() { return titleManager; }
+    public synchronized TitleManager getTitleManager() { return titleManager; }
 
-    public static synchronized PluginManager getPluginManager() { return pluginManager; }
+    public synchronized PluginManager getPluginManager() { return pluginManager; }
 
-    public static synchronized ArrayList<NoxisPlayer> getNoxisPlayers() { return NoxisPlayers; }
+    public synchronized ArrayList<NoxisPlayer> getNoxisPlayers() { return NoxisPlayers; }
 
-    public static synchronized Logger getConsoleLogger() { return consoleLogger; }
+    public synchronized Logger getConsoleLogger() { return consoleLogger; }
 
 }

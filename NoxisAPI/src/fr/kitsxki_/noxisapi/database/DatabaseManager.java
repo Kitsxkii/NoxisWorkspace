@@ -61,7 +61,7 @@ public class DatabaseManager {
 
             if(hasAccount(uuid, true)) {
 
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
 
                 String stringUUID = uuid.toString();
                 String pseudo = Bukkit.getPlayer(uuid).getName();
@@ -74,7 +74,7 @@ public class DatabaseManager {
                 createAccount.execute();
                 createAccount.close();
 
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "An account has been created.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "An account has been created.");
 
                 PreparedStatement getID = getConnection().prepareStatement("SELECT id FROM players WHERE uuid = ?");
                 getID.setString(1, stringUUID);
@@ -88,7 +88,7 @@ public class DatabaseManager {
                 }
                 getID.close();
 
-                NoxisAPI.getConsoleLogger().info("ID: " + ID + ", PSEUDO: " + pseudo + ", COINS: 500.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info("ID: " + ID + ", PSEUDO: " + pseudo + ", COINS: 500.");
 
             } else {
                 updateAccount(uuid);
@@ -107,7 +107,7 @@ public class DatabaseManager {
         try {
 
             if(hasAccount(uuid, false)) {
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + actualPseudo + " does not already have an account, so it is not possible to update his account.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + actualPseudo + " does not already have an account, so it is not possible to update his account.");
             } else {
 
                 PreparedStatement updateAccount = getConnection().prepareStatement("UPDATE players SET pseudo = ? WHERE uuid = ?");
@@ -116,7 +116,7 @@ public class DatabaseManager {
                 updateAccount.executeUpdate();
                 updateAccount.close();
 
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The nickname of " + Bukkit.getPlayer(uuid).getName() + " has been updated.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The nickname of " + Bukkit.getPlayer(uuid).getName() + " has been updated.");
 
             }
 
@@ -137,12 +137,12 @@ public class DatabaseManager {
 
             while(resultSet.next()) {
                 if(returnMessage) {
-                    NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "Player " + Bukkit.getPlayer(uuid).getName() + " already has an account.");
+                    NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "Player " + Bukkit.getPlayer(uuid).getName() + " already has an account.");
                 }
                 return false;
             }
             if(returnMessage) {
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
             }
             return true;
 
@@ -150,7 +150,7 @@ public class DatabaseManager {
             e.printStackTrace();
         }
         if(returnMessage) {
-            NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
+            NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The player " + Bukkit.getPlayer(uuid).getName() + " does not already have an account.");
         }
         return true;
 
@@ -160,13 +160,13 @@ public class DatabaseManager {
 
         try {
             if((connection == null) || (connection.isClosed())) {
-                NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is not online.");
+                NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is not online.");
                 return false;
             }
-            NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is online.");
+            NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is online.");
             return true;
         } catch (SQLException e) { e.printStackTrace(); }
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is not online.");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.DATABASEMANAGER) + "The database is not online.");
         return false;
 
     }

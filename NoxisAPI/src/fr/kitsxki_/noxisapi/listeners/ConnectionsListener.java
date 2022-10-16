@@ -22,10 +22,10 @@ public class ConnectionsListener implements Listener {
         final UUID playerUUID = player.getUniqueId();
         final NoxisPlayer noxisPlayer = new NoxisPlayer(player, new PlayerData(playerUUID), new PlayerInfo(player));
 
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + "The player " + player.getName() + " has joined the server.");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + "The player " + player.getName() + " has joined the server.");
 
-        NoxisAPI.getDatabaseManager().createAccount(playerUUID);
-        NoxisAPI.getNoxisPlayers().add(noxisPlayer);
+        NoxisAPI.getAPIInstance().getDatabaseManager().createAccount(playerUUID);
+        NoxisAPI.getAPIInstance().getNoxisPlayers().add(noxisPlayer);
 
     }
 
@@ -36,9 +36,9 @@ public class ConnectionsListener implements Listener {
         final UUID playerUUID = player.getUniqueId();
         final NoxisPlayer noxisPlayer = new NoxisPlayer(player, new PlayerData(playerUUID), new PlayerInfo(player));
 
-        NoxisAPI.getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + "The player " + player.getName() + " has left the server.");
+        NoxisAPI.getAPIInstance().getConsoleLogger().info(NoxisAPI.getAPIInstance().getPrefix(PrefixMode.CONSOLE) + "The player " + player.getName() + " has left the server.");
 
-        NoxisAPI.getNoxisPlayers().remove(noxisPlayer);
+        NoxisAPI.getAPIInstance().getNoxisPlayers().remove(noxisPlayer);
 
     }
 
